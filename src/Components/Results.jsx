@@ -15,10 +15,12 @@ const Results = ({username}) => {
 					params: { username: username },
 					headers: {
 						"Content-Type": "application/json",
-					'x-rapidapi-key': process.env.REACT_APP_RAPIDAPI_KEY,
-            		'x-rapidapi-host': process.env.REACT_APP_RAPIDAPI_HOST,
+						"x-rapidapi-key":
+							"886bee5445mshfb6b24f13086119p142989jsn16c9614dd626",
+						"x-rapidapi-host": "twitter-api47.p.rapidapi.com",
+					},
 				},
-			)
+			);
 			const userID = response.data.rest_id;
 			setUserID(userID);
 			console.log(userID);
@@ -37,10 +39,11 @@ const Results = ({username}) => {
 				{
 					params: { userId: userID },
 					headers: {
-						'Content-Type': 'application/json',
-            			'x-rapidapi-key': process.env.REACT_APP_RAPIDAPI_KEY,
-            			'x-rapidapi-host': process.env.REACT_APP_RAPIDAPI_HOST,
-        	},
+						"Content-Type": "application/json",
+						"x-rapidapi-key":
+							"886bee5445mshfb6b24f13086119p142989jsn16c9614dd626",
+						"x-rapidapi-host": "twitter-api47.p.rapidapi.com",
+					},
 				},
 			);
 			const tweets = response.data.tweets;
