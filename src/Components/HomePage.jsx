@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-const HomePage = () => {
+const HomePage = ({username , setUsername}) => {
+	
   return (
 			<>
 				<div className=" bg-gray-900 min-h-screen">
@@ -11,14 +12,9 @@ const HomePage = () => {
 					<div className="pt-24 px-32 text-2xl">
 						<input
 							type="text"
-							placeholder="Enter Facebook profile link"
+							placeholder="Enter Username"
 							className="mb-10 w-3/4"
-						/>
-						<br />
-						<input 
-							type="text"
-							placeholder="Enter Twitter profile link x"
-							className="w-3/4 mb-10"
+							onChange={(e) => setUsername(e.target.value)}
 						/>
 						<br />
 						<Link to="/results"

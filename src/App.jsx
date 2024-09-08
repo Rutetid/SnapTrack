@@ -6,16 +6,19 @@ import Login from './Components/LoginPage'
 import HomePage from './Components/HomePage'
 import Results from './Components/Results'
 import { Routes, Route } from "react-router-dom";
+import Post from './Components/Post'
+
 
 function App() {
+	const [username, setUsername] = useState("");
 
   return (
 			<>
 				<Routes>
-					<Route path="/" element={<Login />} />
+					<Route path="/" element={<Post />} />
 					<Route path="/login" element={<Login />} />
-					<Route path="/home" element={<HomePage />} />
-					<Route path="/results" element={<Results />} />
+					<Route path="/home" element={<HomePage username = {username} setUsername = {setUsername} />} />
+					<Route path="/results" element={<Results username = {username} />} />
 				</Routes>
 			</>
 		);
